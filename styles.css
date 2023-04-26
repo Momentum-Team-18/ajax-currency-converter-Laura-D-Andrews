@@ -1,0 +1,28 @@
+
+
+#containerBox {
+    display: grid; 
+    grid-template-columns: repeat(6, 75px);
+    grid-template-rows: repeat(8, 35px); 
+    background-color: yellow; 
+    width: 600px; 
+}
+
+.baseCurrency {
+    background-color: blue; 
+}
+.targetCurrency {
+    background-color: brown; 
+}
+
+.inputAmount {
+    background-color: pink; 
+}
+
+.outputAmount {
+    background-color: green;
+}
+
+.exchangeEquation {
+    background-color: purple; 
+}

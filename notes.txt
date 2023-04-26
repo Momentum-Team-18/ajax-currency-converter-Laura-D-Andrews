@@ -1,0 +1,26 @@
+/* insomnia - meant to do things we could do in JS or command line.
+is a sandbox to send requests to API. Practice here first. 
+internet of things - where you can connect to things like location sensors, 
+weather sensors, etc. 
+dropped API end-point in insomnia - the url
+add ID to url - in insomnia
+blah blah don't know what happened - see slack message
+fetch takes a url, look at structure of url and see where 
+to put a template literal (changing ids)*/
+
+// GET = show us some data from your database 
+// .then = wait until there's a response
+// return response.json() - computer reads it/parses it
+// .response - whatever you get from code immediately before it
+
+ // To think about
+ // 1. dropdowns for .currencyAbb
+ // 2. adding flags if possible
+ // 3. giving info about country? 
+ // 4. how you can write in the amount box and it also changes the box below it
+ // 5. how to make equation 1 blah = 1 blah based on countries you've chosen . exchangeEquation
+
+ //advice from readme
+ //look at documentation for API!!!
+ //"content-type": "application.json" is what we will be using for now
+ //
