@@ -2,10 +2,19 @@
 
 #containerBox {
     display: grid; 
-    grid-template-columns: repeat(6, 75px);
-    grid-template-rows: repeat(8, 35px); 
-    background-color: yellow; 
-    width: 600px; 
+    grid-template-columns: repeat(12, 75px);
+    grid-template-rows: repeat(12, 55px); 
+    border: 1px solid black;
+    width: 900px; 
+}
+
+/* column - 12, 50px   rows - 12, 30px*/
+.header {
+    background-color: lightblue; 
+    grid-column-start: 10;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 .baseCurrency {
