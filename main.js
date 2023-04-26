@@ -11,6 +11,20 @@ containerBox.appendChild(headerBox)
 headerBox.classList.add("header")
 console.log(headerBox)
 
+// from
+let fromBox = document.createElement('div')
+fromBox.innerText = "From"
+containerBox.appendChild(fromBox)
+fromBox.classList.add("from")
+console.log(fromBox)
+
+// to
+let toBox = document.createElement('div')
+toBox.innerText = "To"
+containerBox.appendChild(toBox)
+toBox.classList.add("to")
+console.log(toBox)
+
 // base currency
 let baseCurrencyBox = document.createElement("div");
 baseCurrencyBox.innerText = "USD";
@@ -40,9 +54,24 @@ outputAmountBox.classList.add("outputAmount")
 console.log(outputAmountBox)
 
 // exchange equation box
-
 let exchangeEquationBox = document.createElement('div')
 exchangeEquationBox.innerText = "1 EUR = 1 USD"
 containerBox.appendChild(exchangeEquationBox)
 exchangeEquationBox.classList.add("exchangeEquation")
 console.log(exchangeEquationBox)
+
+// base flag box
+let baseFlagBox = document.createElement('div')
+baseFlagBox.innerText = ""
+containerBox.appendChild(baseFlagBox)
+baseFlagBox.classList.add("baseFlag")
+console.log(baseFlagBox)
+// needs to be img so targetFlagBox.src
+
+// target flag box
+let targetFlagBox = document.createElement('div')
+targetFlagBox.innerText = ""
+containerBox.appendChild(targetFlagBox)
+targetFlagBox.classList.add("targetFlag")
+console.log(targetFlagBox)
+// needs to be img so targetFlagBox.src
