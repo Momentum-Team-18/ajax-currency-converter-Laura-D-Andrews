@@ -2,36 +2,56 @@
 
 #containerBox {
     display: grid; 
-    grid-template-columns: repeat(12, 75px);
-    grid-template-rows: repeat(12, 55px); 
+    grid-template-columns: repeat(12, 50px);
+    grid-template-rows: repeat(13, 30px); 
     border: 1px solid black;
-    width: 900px; 
+    width: 600px; 
 }
 
 /* column - 12, 50px   rows - 12, 30px*/
 .header {
     background-color: lightblue; 
-    grid-column-start: 10;
-    grid-column-end: 4;
-    grid-row-start: 2;
+    grid-column-start: -10;
+    grid-column-end: -4;
+    grid-row-start: 1;
     grid-row-end: 3;
 }
 
 .baseCurrency {
+    grid-column-start: -12;
+    grid-column-end: -9;
+    grid-row-start: 4;
+    grid-row-end: 6;
     background-color: blue; 
 }
 .targetCurrency {
+    grid-column-start: -12;
+    grid-column-end: -9;
+    grid-row-start: 8;
+    grid-row-end: 10;
     background-color: brown; 
 }
 
 .inputAmount {
+    grid-column-start: -8;
+    grid-column-end: -2;
+    grid-row-start: 4;
+    grid-row-end: 6;
     background-color: pink; 
 }
 
 .outputAmount {
+    grid-column-start: -8;
+    grid-column-end: -2;
+    grid-row-start: 8;
+    grid-row-end: 10;
     background-color: green;
 }
 
 .exchangeEquation {
+    grid-column-start: -10;
+    grid-column-end: -4;
+    grid-row-start: 11;
+    grid-row-end: 13;
     background-color: purple; 
 }
