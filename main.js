@@ -20,23 +20,59 @@ fetch(url, {
     return response.json();
   })
   .then((parsedResponse) => {
-    let exchangeEquation = parsedResponse.rates
-    console.log(exchangeEquation)
-    return exchangeEquation
-  })
-  .then (exchangeEquation => {
-let exchangeEquationBox = document.createElement('div')
- exchangeEquationBox.innerText = `1 USD = ${exchangeEquation}`
-containerBox.appendChild(exchangeEquationBox)
-exchangeEquationBox.classList.add("exchangeEquation")
-  })
+    console.log(parsedResponse.rates);
+    let exchangeEquationBox = parsedResponse.rates;
+    console.log(exchangeEquationBox);
+    let exchangeEquation = document.createElement("div");
+    exchangeEquation.innerText = `${exchangeEquationBox}`;
+    containerBox.appendChild(exchangeEquation)
+exchangeEquation.classList.add("exchangeEquation")
+    console.log(exchangeEquation);
+  });
 
-// exchange equation box
+
+
+
+
+
+
+
+  
+// .then(yup => {
+// let targetCurrencyBox = document.createElement("div");
+// targetCurrencyBox.innerText = `${currencies}`;
+// containerBox.appendChild(targetCurrencyBox);
+// targetCurrencyBox.classList.add("targetCurrency");
+// return yup
+// })
+// .then(yea => {
+// let exchangeEquationBox =
+// })
+
+// .then(targetCurrencyExEq => {
 // let exchangeEquationBox = document.createElement('div')
-// exchangeEquationBox.innerText = "1 EUR = 1 USD"
+// exchangeEquationBox.innerText = `1 USD = ${targetCurrencyBox.innerText}`
 // containerBox.appendChild(exchangeEquationBox)
 // exchangeEquationBox.classList.add("exchangeEquation")
-// console.log(exchangeEquationBox)
+// return targetCurrencyExEq
+//   })
+
+// let targetCurrencyBox = document.createElement("div");
+// targetCurrencyBox.innerText = `${currencies}`;
+// containerBox.appendChild(targetCurrencyBox);
+// targetCurrencyBox.classList.add("targetCurrency");
+// console.log(targetCurrencyBox)
+
+// targetCurrencyBox.addEventListener('click', (event) => {
+//     targetCurrencyBox.innerText = 'a'
+//     console.log(targetCurrencyBox.innerText)
+// })
+
+// targetCurrencyBox.addEventListener('click', (event) => {
+// let exchangeEquationBox = `${exchangeEquationBox.innerText}`
+// exchangeEquationBox.innerText = exchangeEquationBox
+//     return exchangeEquationBox.innerText
+// })
 
 //   .then(function (data) {
 //     console.log(data);
@@ -46,8 +82,8 @@ exchangeEquationBox.classList.add("exchangeEquation")
 //     let targetCurrencyBox = document.createElement("div");
 //     targetCurrencyBox.innerText = target.rates
 //     containerBox.appendChild(targetCurrencyBox);
-    // targetCurrencyBox.classList.add("targetCurrency");
-    // console.log(targetCurrencyBox);
+// targetCurrencyBox.classList.add("targetCurrency");
+// console.log(targetCurrencyBox);
 // }
 //   })
 
@@ -99,8 +135,6 @@ exchangeEquationBox.classList.add("exchangeEquation")
 // containerBox.appendChild(outputAmountBox)
 // outputAmountBox.classList.add("outputAmount")
 // console.log(outputAmountBox)
-
-
 
 // base flag box
 // let baseFlagBox = document.createElement('div')
