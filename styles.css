@@ -21,6 +21,7 @@
     grid-row-end: 3;
     font-size: 28px; 
     text-align: center; 
+    align-self: center; 
 }
 .from {
     border: 1px solid white; 
@@ -29,6 +30,9 @@
     grid-row-start: 3;
     grid-row-end: 4;
     font-size: 14px; 
+    text-align: center;
+    align-self: center;
+    
 }
 .to {
     border: 1px solid white; 
@@ -37,6 +41,9 @@
     grid-row-start: 7;
     grid-row-end: 8;
     font-size: 14px; 
+    text-align: center;
+    align-self: center; 
+    
 }
 .baseCurrency {
     display: flex;
@@ -46,7 +53,11 @@
     grid-row-start: 4;
     grid-row-end: 6;
     border-radius: 1em;
-    font-size: 22px;  
+    font-size: 22px;
+    place-self: center stretch; 
+    text-align: center; 
+    padding-left: 20px; 
+    
 }
 .targetCurrency { 
     display: flex; 
@@ -56,19 +67,22 @@
     grid-row-start: 8;
     grid-row-end: 10;
     border-radius: 1em; 
-    font-size: 22px;  
+    font-size: 22px; 
+    place-self: center stretch; 
+    text-align: center; 
+    padding-left: 20px; 
 }
 .baseFlag { /*target img*/
     border: 1px solid white; 
-    grid-column-start: -12;
-    grid-column-end: -11;
+    grid-column-start: -10;
+    grid-column-end: -9;
     grid-row-start: 4;
     grid-row-end: 6;
 }
 .targetFlag {/*target img*/
     border: 1px solid white; 
-    grid-column-start: -12;
-    grid-column-end: -11;
+    grid-column-start: -10;
+    grid-column-end: -9;
     grid-row-start: 8;
     grid-row-end: 10;
 }
@@ -80,6 +94,8 @@
     grid-row-end: 6;
     border-radius: 1em; 
     font-size: 26px; 
+    place-self: center stretch; 
+    text-align: center; 
 }
 .outputAmount {
     border: 1px solid white; 
@@ -89,6 +105,8 @@
     grid-row-end: 10;
     border-radius: 1em; 
     font-size: 26px; 
+    place-self: center stretch; 
+    text-align: center; 
 }
 .exchangeEquation {
     border: 1px solid white; 
@@ -98,4 +116,6 @@
     grid-row-end: 13;
     border-radius: 1em;
     font-size: 22px;  
+    text-align: center;
+    align-self: center; 
 }
