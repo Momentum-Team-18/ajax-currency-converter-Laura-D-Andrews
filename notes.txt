@@ -41,3 +41,53 @@ to put a template literal (changing ids)*/
     // convert button "click"
     // choose currency - update user interface
     // changes $ amount - update user interface
+
+
+/ unexpected end of input
+// method: "GET"
+// headers: {'Content-Type': "application/json"}
+
+//.then((response) => {
+    //return response.json()
+// })
+
+// .then((parsedResponse) => {
+//     let login = 
+// })
+
+// use for loops - they faster
+
+//let url = url endpoint
+
+// create element needs to be in .then statement - seperate .then statement
+// .then - dont try what's in these curly braces until what's above it has completed
+// .then((userData)) => {
+//     createusercrd(userData)
+// }
+// fetch only once
+
+// unexpected end of input
+// strategies - break points
+// what if it's specific to this API? 
+
+/* in JS there are two ways to write functions
+function equals(a, b) {
+    return equals a === b; 
+}
+function with a name above
+
+no name (anon below)
+mainContainer.addevenlistener((event, b) => {
+    return event.target
+})
+mainContainer.addEventListener(function (event, b) {
+    return  event.target
+})
+doesn't need a name because it's in an event listener
+
+call back - function also doesn;t have to have a name
+
+can use arrow notation for no name (anon) functions
+let arrjowFunction = (a, b) => {
+    return a === b; 
+}

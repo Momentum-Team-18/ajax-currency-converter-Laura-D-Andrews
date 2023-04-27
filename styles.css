@@ -24,7 +24,7 @@
     align-self: center; 
 }
 .from {
-    border: 1px solid white; 
+    color:  #E8E8E8;
     grid-column-start: -12;
     grid-column-end: -11;
     grid-row-start: 3;
@@ -35,7 +35,7 @@
     
 }
 .to {
-    border: 1px solid white; 
+    color: #E8E8E8;
     grid-column-start: -12;
     grid-column-end: -11;
     grid-row-start: 7;
@@ -47,7 +47,7 @@
 }
 .baseCurrency {
     display: flex;
-    border: 1px solid white; 
+    border: 3px solid #96939B; 
     grid-column-start: -12;
     grid-column-end: -9;
     grid-row-start: 4;
@@ -57,11 +57,12 @@
     place-self: center stretch; 
     text-align: center; 
     padding-left: 20px; 
+    background-color: #E8E8E8;
     
 }
 .targetCurrency { 
-    display: flex; 
-    border: 1px solid white; 
+    display: flex;
+    border: 3px solid #96939B; 
     grid-column-start: -12;
     grid-column-end: -9;
     grid-row-start: 8;
@@ -71,6 +72,7 @@
     place-self: center stretch; 
     text-align: center; 
     padding-left: 20px; 
+    background-color: #E8E8E8;
 }
 .baseFlag { /*target img*/
     border: 1px solid white; 
@@ -87,7 +89,8 @@
     grid-row-end: 10;
 }
 .inputAmount {
-    border: 1px solid white; 
+    border: 3px solid #A96250;
+    background-color: #E8E8E8;
     grid-column-start: -8;
     grid-column-end: -2;
     grid-row-start: 4;
@@ -98,7 +101,8 @@
     text-align: center; 
 }
 .outputAmount {
-    border: 1px solid white; 
+    border: 3px solid #A96250; 
+    background-color: #E8E8E8;
     grid-column-start: -8;
     grid-column-end: -2;
     grid-row-start: 8;
@@ -109,7 +113,7 @@
     text-align: center; 
 }
 .exchangeEquation {
-    border: 1px solid white; 
+    border: 3px solid #D3724D; 
     grid-column-start: -10;
     grid-column-end: -4;
     grid-row-start: 11;
@@ -117,5 +121,6 @@
     border-radius: 1em;
     font-size: 22px;  
     text-align: center;
-    align-self: center; 
+    align-self: center;
+    background-color: #E8E8E8;
 }
