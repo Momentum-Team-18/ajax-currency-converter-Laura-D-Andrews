@@ -60,7 +60,7 @@
     background-color: #E8E8E8;
     
 }
-.targetCurrency { 
+.countryCodes { 
     display: flex;
     border: 3px solid #96939B; 
     grid-column-start: -12;
@@ -100,7 +100,7 @@
     place-self: center stretch; 
     text-align: center; 
 }
-.outputAmount {
+.countryRates {
     border: 3px solid #A96250; 
     background-color: #E8E8E8;
     grid-column-start: -8;
