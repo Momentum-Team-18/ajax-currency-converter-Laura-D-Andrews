@@ -16,7 +16,6 @@ fetch(ratesUrl, {
     console.log(Array.isArray(parsedResponse));
     const makeAnArray = parsedResponse.rates;
 
-    //codes and codesBox - not functioning as dropdown yet
     let codesBox = document.createElement("div");
     codesBox.innerText = "";
     containerBox.appendChild(codesBox);
@@ -32,10 +31,8 @@ fetch(ratesUrl, {
       console.log(countryCodes);
     }
 
+    ///////////////////////////////////////////////////////////////////////////////
 
-
-
-    // country exchange rates
     let countryRates = Object.values(makeAnArray);
     for (rate of countryRates) {
       countryRates = document.createElement("div");
@@ -44,60 +41,54 @@ fetch(ratesUrl, {
       countryRates.classList.add("countryRates");
       console.log(countryRates);
     }
-    // $ input box
+
     let inputAmountBox = document.createElement("textarea");
     containerBox.appendChild(inputAmountBox);
     inputAmountBox.classList.add("inputAmount");
     console.log(inputAmountBox);
 
-    // exchange box - when click calculate button exchange amount shows here
     let exchangeBox = document.createElement("div");
-    exchangeBox.innerText = ''
+    exchangeBox.innerText = "1";
     containerBox.appendChild(exchangeBox);
     console.log(exchangeBox);
     exchangeBox.classList.add("exchangeBox");
 
-
-
-    // creates calculate button
     let calculateButton = document.createElement("div");
     calculateButton.innerText = "calculate";
     containerBox.appendChild(calculateButton);
-    calculateButton.classList.add("calculate")
-   
+    calculateButton.classList.add("calculateButton");
 
-    // calculate button listener - click calculate button and currency conversion appears in exchange boc
-    calculateButton.addEventListener("click", (event) => { 
+    calculateButton.addEventListener("click", (event) => {
       console.log(event.target.innerText);
       let answer = inputAmountBox.value * `${rate}`;
       console.log(answer);
-      exchangeBox.innerText = answer
+      exchangeBox.innerText = answer;
     });
+
+    /////////////////////////////////////////////////////////////////////////////////////
+
+    let baseCurrency = document.createElement("div");
+    baseCurrency.innerText = "USD";
+    containerBox.appendChild(baseCurrency);
+    baseCurrency.classList.add("baseCurrency");
+    console.log(baseCurrency);
+
+    let headerBox = document.createElement("div");
+    headerBox.innerText = "Currency Converter";
+    containerBox.appendChild(headerBox);
+    headerBox.classList.add("header");
+    console.log(headerBox);
+
+    let fromBox = document.createElement("div");
+    fromBox.innerText = "From";
+    containerBox.appendChild(fromBox);
+    fromBox.classList.add("from");
+    console.log(fromBox);
+
+    let toBox = document.createElement("div");
+    toBox.innerText = "To";
+    containerBox.appendChild(toBox);
+    toBox.classList.add("to");
+    console.log(toBox);
+
   });
-
-
-
-
-let baseCurrency = document.createElement("div");
-baseCurrency.innerText = "USD";
-containerBox.appendChild(baseCurrency);
-baseCurrency.classList.add("baseCurrency");
-console.log(baseCurrency);
-
-let headerBox = document.createElement("div");
-headerBox.innerText = "Currency Converter";
-containerBox.appendChild(headerBox);
-headerBox.classList.add("header");
-console.log(headerBox);
-
-let fromBox = document.createElement("div");
-fromBox.innerText = "From";
-containerBox.appendChild(fromBox);
-fromBox.classList.add("from");
-console.log(fromBox);
-
-let toBox = document.createElement("div");
-toBox.innerText = "To";
-containerBox.appendChild(toBox);
-toBox.classList.add("to");
-console.log(toBox);
