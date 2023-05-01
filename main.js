@@ -16,7 +16,7 @@ fetch(ratesUrl, {
     console.log(Array.isArray(parsedResponse));
     const makeAnArray = parsedResponse.rates;
 
-    let codesBox = document.createElement("div");
+    let codesBox = document.createElement("select");
     codesBox.innerText = "";
     containerBox.appendChild(codesBox);
     codesBox.classList.add("countryCodes");
@@ -24,7 +24,7 @@ fetch(ratesUrl, {
 
     let countryCodes = Object.keys(makeAnArray);
     for (code of countryCodes) {
-      countryCodes = document.createElement("div");
+      countryCodes = document.createElement("option");
       countryCodes.innerText = `${code}`;
       codesBox.appendChild(countryCodes);
       countryCodes.classList.add("countryCodes");
@@ -33,6 +33,12 @@ fetch(ratesUrl, {
 
     ///////////////////////////////////////////////////////////////////////////////
 
+    let ratesBox = document.createElement('div')
+    ratesBox.innerText = ""
+    containerBox.appendChild(ratesBox)
+    console.log(ratesBox)
+    ratesBox.classList.add("countryRates")
+    
     let countryRates = Object.values(makeAnArray);
     for (rate of countryRates) {
       countryRates = document.createElement("div");
@@ -41,6 +47,13 @@ fetch(ratesUrl, {
       countryRates.classList.add("countryRates");
       console.log(countryRates);
     }
+
+    codesBox.addEventListener("click", (event) => {
+      console.log(event.target.innerText);
+      let output = `${rate}`
+      console.log(output);
+      ratesBox.innerText = output;
+    });
 
     let inputAmountBox = document.createElement("textarea");
     containerBox.appendChild(inputAmountBox);
