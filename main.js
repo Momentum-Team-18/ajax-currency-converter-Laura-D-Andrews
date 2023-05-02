@@ -33,7 +33,7 @@ fetch(ratesUrl, {
       console.log(Array.isArray(countryRates));
     }
 
-    // let codeRateArray = Object.entries(makeAnArray);
+    // let converterArray = Object.entries(makeAnArray);
 
     let outputBox = document.createElement("div");
     containerBox.appendChild(outputBox);
@@ -41,7 +41,6 @@ fetch(ratesUrl, {
     // brown background
 
     let exchangeRateBox = document.createElement("div");
-    exchangeRateBox.innerText = "0.00";
     containerBox.appendChild(exchangeRateBox);
     exchangeRateBox.classList.add("exchangeRateBox");
     //yellow background
