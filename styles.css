@@ -66,15 +66,18 @@
     background-color: #E8E8E8;
     
 }
-.countryCodes { 
-    display: flex;
+
+#countryCodesBox {
     grid-column-start: -12;
     grid-column-end: -8;
     grid-row-start: 8;
     grid-row-end: 10;
-    border-radius: 1em; 
-    font-size: 22px; 
-    padding-left: 20px; 
+    border-radius: 2em; 
+    font-size: 26px;
+    
+}
+.countryCodes { 
+    
     background-color: #E8E8E8;
 }
 #inputAmountBox {
@@ -84,24 +87,14 @@
    background-color: #E8E8E8;
    font-size: 26px;
    
-    /* background-color: #E8E8E8;
-    grid-column-start: -8;
-    grid-column-end: -2;
-    grid-row-start: 4;
-    grid-row-end: 6;
-    border-radius: 1em; 
-    font-size: 26px; 
-    padding-left: 10px;  */
 }
 #form {
-    /* background-color: #E8E8E8; */
     grid-column-start: -8;
     grid-column-end: -2;
     grid-row-start: 4;
     grid-row-end: 6;
     border-radius: 1em; 
-    font-size: 26px; 
-    /* padding-left: 10px; */
+   
 }
 .ratesBox {
     

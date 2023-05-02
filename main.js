@@ -1,4 +1,5 @@
 let containerBox = document.querySelector("#containerBox");
+let countryCodesBox = document.querySelector("#countryCodesBox")
 let inputAmountBox = document.querySelector("#inputAmountBox")
 let form = document.querySelector("#form")
 let convertButton = document.querySelector('.convertButton')
@@ -19,12 +20,6 @@ fetch(ratesUrl, {
     console.log(Array.isArray(parsedResponse));
     const makeAnArray = parsedResponse.rates;
 
-    let countryCodesBox = document.createElement("select");
-    countryCodesBox.innerText = "";
-    containerBox.appendChild(countryCodesBox);
-    countryCodesBox.classList.add("countryCodes");
-    console.log(countryCodesBox);
-
     let countryCodes = Object.keys(makeAnArray);
     for (code of countryCodes) {
       countryCodes = document.createElement("option");
@@ -35,78 +30,46 @@ fetch(ratesUrl, {
     }
 
     let countryRates = Object.values(makeAnArray);
-    console.log(Array.isArray(countryRates));
     for (rate of countryRates) {
+    console.log(Array.isArray(countryRates));
     }
 
     let codeRateArray = Object.entries(makeAnArray);
     console.log(codeRateArray);
     console.log(Array.isArray(codeRateArray));
 
-    let countryRatesBox = document.createElement("div");
-    countryRatesBox.innerText = "0.00";
-    containerBox.appendChild(countryRatesBox);
-    console.log(countryRatesBox);
-    countryRatesBox.classList.add("ratesBox");
+    let outputBox = document.createElement("div");
+    outputBox.innerText = `${rate}`;
+    containerBox.appendChild(outputBox);
+    console.log(outputBox);
+    outputBox.classList.add("ratesBox");
 
-    let exchangeBox = document.createElement("div");
-    exchangeBox.innerText = "0.00";
-    containerBox.appendChild(exchangeBox);
-    console.log(exchangeBox);
-    exchangeBox.classList.add("exchangeBox");
+    let exchangeRateBox = document.createElement("div");
+    exchangeRateBox.innerText = "0.00";
+    containerBox.appendChild(exchangeRateBox);
+    console.log(exchangeRateBox);
+    exchangeRateBox.classList.add("exchangeBox");
 
     // event listeners
     countryCodesBox.addEventListener("click", (event) => {
       console.log(event.target.innerText);
-      let country = "? amount";
-      console.log(country);
-      exchangeBox.innerText = country + `${countryCodes.innerText}` //how to make a space
+      let exchangeRate = "? amount";
+      console.log(exchangeRate);
+      exchangeRateBox.innerText = `${rate}` + `${countryCodes.innerText}` //how to make a space
     });
 
     convertButton.addEventListener("click", (event) => {
       console.log(event.target.innerText);
       let answer = inputAmountBox.value * `${rate}`;
       console.log(answer);
-      countryRatesBox.innerText = answer 
+      outputBox.innerText = answer 
     });
 
     startOverButton.addEventListener('click', (event) => {
       event.preventDefault()
-      exchangeBox.replaceChildren()
-      ratesBox.replaceChildren()
-      form.reset()
+      exchangeRateBox.replaceChildren()
+      outputBox.replaceChildren()
+      form.reset()      
     })
-
-    // other JS created elements
-    let baseCurrency = document.createElement("div");
-    baseCurrency.innerText = "USD";
-    containerBox.appendChild(baseCurrency);
-    baseCurrency.classList.add("baseCurrency");
-    console.log(baseCurrency);
-
-    let headerBox = document.createElement("div");
-    headerBox.innerText = "Currency Converter";
-    containerBox.appendChild(headerBox);
-    headerBox.classList.add("header");
-    console.log(headerBox);
-
-    let fromText = document.createElement("div");
-    fromText.innerText = "From";
-    containerBox.appendChild(fromText);
-    fromText.classList.add("from");
-
-    let toText = document.createElement("div");
-    toText.innerText = "To";
-    containerBox.appendChild(toText);
-    toText.classList.add("to");
-
-    let amountText = document.createElement("div");
-    amountText.innerText = "Amount";
-    containerBox.appendChild(amountText);
-    amountText.classList.add("amount");
-
-    let usDollar = document.createElement('div')
-    usDollar.innerText = "1 USD is equal to"
-    containerBox.appendChild(usDollar)
-    usDollar.classList.add("dollar")
+    
   });
