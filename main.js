@@ -31,10 +31,9 @@ fetch(ratesUrl, {
       console.log(countryCodes);
     }
 
-  
     let countryRates = Object.values(makeAnArray);
     console.log(Array.isArray(countryRates));
-    for (rate of countryRates) { 
+    for (rate of countryRates) {
     }
 
     let codeRateArray = Object.entries(makeAnArray);
@@ -42,18 +41,19 @@ fetch(ratesUrl, {
     console.log(Array.isArray(codeRateArray));
 
     let ratesBox = document.createElement("div");
-    ratesBox.innerText = "";
+    ratesBox.innerText = "0.00";
     containerBox.appendChild(ratesBox);
     console.log(ratesBox);
     ratesBox.classList.add("ratesBox");
 
     let inputAmountBox = document.createElement("textarea");
+    inputAmountBox.innerText = "0.00";
     containerBox.appendChild(inputAmountBox);
     inputAmountBox.classList.add("inputAmount");
     console.log(inputAmountBox);
 
     let exchangeBox = document.createElement("div");
-    exchangeBox.innerText = "1";
+    exchangeBox.innerText = "0.00";
     containerBox.appendChild(exchangeBox);
     console.log(exchangeBox);
     exchangeBox.classList.add("exchangeBox");
@@ -66,9 +66,9 @@ fetch(ratesUrl, {
     // event listeners
     codesBox.addEventListener("click", (event) => {
       console.log(event.target.innerText);
-      let country = `${countryCodes.innerText}`
+      let country = `${countryCodes.innerText}`;
       console.log(country);
-      ratesBox.innerText = country
+      ratesBox.innerText = country;
     });
 
     calculateButton.addEventListener("click", (event) => {
@@ -76,6 +76,11 @@ fetch(ratesUrl, {
       let answer = inputAmountBox.value * `${rate}`;
       console.log(answer);
       exchangeBox.innerText = answer;
+    });
+
+    inputAmountBox.addEventListener("click", (event) => {
+      inputAmountBox.innerText = "";
+      console.log(inputAmountBox.innerText);
     });
 
     // other JS created elements
@@ -95,14 +100,14 @@ fetch(ratesUrl, {
     fromText.innerText = "From";
     containerBox.appendChild(fromText);
     fromText.classList.add("from");
-   
+
     let toText = document.createElement("div");
     toText.innerText = "To";
     containerBox.appendChild(toText);
     toText.classList.add("to");
-  
-    let amountText = document.createElement('div')
-    amountText.innerText = "Amount"
-    containerBox.appendChild(amountText)
-    amountText.classList.add("amount")
+
+    let amountText = document.createElement("div");
+    amountText.innerText = "Amount";
+    containerBox.appendChild(amountText);
+    amountText.classList.add("amount");
   });
