@@ -31,34 +31,21 @@ fetch(ratesUrl, {
       console.log(countryCodes);
     }
 
+  
     let countryRates = Object.values(makeAnArray);
-    // for (rate of countryRates) {
-    //   countryRates = document.createElement("div");
-    //   countryRates.innerText = `${rate}`;
-    //   containerBox.appendChild(countryRates);
-    //   countryRates.classList.add("countryRates");
-    //   console.log(countryRates);
-    // }
+    console.log(Array.isArray(countryRates));
+    for (rate of countryRates) { 
+    }
 
     let codeRateArray = Object.entries(makeAnArray);
-    console.log(Array.isArray(codeRateArray))
-
-function findRateByCode(code, rate) {
-  let rates = []
-  for (let rate of rates) {
-    if (rate.code === code)
-    rates.push(rate)
-  }
-}
-findRateByCode("ZAR", )
-console.log(findRateByCode)
-
+    console.log(codeRateArray);
+    console.log(Array.isArray(codeRateArray));
 
     let ratesBox = document.createElement("div");
     ratesBox.innerText = "";
     containerBox.appendChild(ratesBox);
     console.log(ratesBox);
-    ratesBox.classList.add("countryRates");
+    ratesBox.classList.add("ratesBox");
 
     let inputAmountBox = document.createElement("textarea");
     containerBox.appendChild(inputAmountBox);
@@ -71,12 +58,19 @@ console.log(findRateByCode)
     console.log(exchangeBox);
     exchangeBox.classList.add("exchangeBox");
 
-    let calculateButton = document.createElement("div");
-    calculateButton.innerText = "calculate";
+    let calculateButton = document.createElement("button");
+    calculateButton.innerText = "convert";
     containerBox.appendChild(calculateButton);
     calculateButton.classList.add("calculateButton");
 
     // event listeners
+    codesBox.addEventListener("click", (event) => {
+      console.log(event.target.innerText);
+      let country = `${countryCodes.innerText}`
+      console.log(country);
+      ratesBox.innerText = country
+    });
+
     calculateButton.addEventListener("click", (event) => {
       console.log(event.target.innerText);
       let answer = inputAmountBox.value * `${rate}`;
@@ -97,15 +91,18 @@ console.log(findRateByCode)
     headerBox.classList.add("header");
     console.log(headerBox);
 
-    let fromBox = document.createElement("div");
-    fromBox.innerText = "From";
-    containerBox.appendChild(fromBox);
-    fromBox.classList.add("from");
-    console.log(fromBox);
-
-    let toBox = document.createElement("div");
-    toBox.innerText = "To";
-    containerBox.appendChild(toBox);
-    toBox.classList.add("to");
-    console.log(toBox);
+    let fromText = document.createElement("div");
+    fromText.innerText = "From";
+    containerBox.appendChild(fromText);
+    fromText.classList.add("from");
+   
+    let toText = document.createElement("div");
+    toText.innerText = "To";
+    containerBox.appendChild(toText);
+    toText.classList.add("to");
+  
+    let amountText = document.createElement('div')
+    amountText.innerText = "Amount"
+    containerBox.appendChild(amountText)
+    amountText.classList.add("amount")
   });

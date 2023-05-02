@@ -31,8 +31,7 @@
     grid-row-end: 4;
     font-size: 14px; 
     text-align: center;
-    align-self: center;
-    
+    align-self: center;   
 }
 .to {
     color: #E8E8E8;
@@ -42,8 +41,17 @@
     grid-row-end: 8;
     font-size: 14px; 
     text-align: center;
-    align-self: center; 
-    
+    align-self: center;    
+}
+.amount {
+    color: #E8E8E8;
+    grid-column-start: -8;
+    grid-column-end: -6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 14px; 
+    text-align: center;
+    align-self: center;    
 }
 .baseCurrency {
     display: flex;
@@ -100,7 +108,7 @@
     place-self: center stretch; 
     text-align: center; 
 }
-.countryRates {
+.ratesBox {
     border: 3px solid #A96250; 
     background-color: #E8E8E8;
     grid-column-start: -8;
