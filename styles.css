@@ -7,7 +7,7 @@
 #containerBox {
     display: grid; 
     grid-template-columns: repeat(12, 50px);
-    grid-template-rows: repeat(13, 30px); 
+    grid-template-rows: repeat(20, 22px); 
     border: 1px solid black;
     width: 600px; 
     background-color: #564256; 
@@ -22,6 +22,7 @@
     font-size: 28px; 
     text-align: center; 
     align-self: center; 
+    padding-bottom: 5px;
 }
 .from {
     color:  #E8E8E8;
@@ -55,49 +56,28 @@
 }
 .baseCurrency {
     display: flex;
-    border: 3px solid #96939B; 
     grid-column-start: -12;
-    grid-column-end: -9;
+    grid-column-end: -8;
     grid-row-start: 4;
     grid-row-end: 6;
     border-radius: 1em;
     font-size: 22px;
-    place-self: center stretch; 
-    text-align: center; 
     padding-left: 20px; 
-    background-color: #E8E8E8;
-    
+    background-color: #E8E8E8;  
 }
 .countryCodes { 
     display: flex;
-    border: 3px solid #96939B; 
     grid-column-start: -12;
-    grid-column-end: -9;
+    grid-column-end: -8;
     grid-row-start: 8;
     grid-row-end: 10;
     border-radius: 1em; 
     font-size: 22px; 
-    place-self: center stretch; 
-    text-align: center; 
     padding-left: 20px; 
     background-color: #E8E8E8;
 }
-.baseFlag { /*target img*/
-    border: 1px solid white; 
-    grid-column-start: -10;
-    grid-column-end: -9;
-    grid-row-start: 4;
-    grid-row-end: 6;
-}
-.targetFlag {/*target img*/
-    border: 1px solid white; 
-    grid-column-start: -10;
-    grid-column-end: -9;
-    grid-row-start: 8;
-    grid-row-end: 10;
-}
 .inputAmount {
-    border: 3px solid #A96250;
+   
     background-color: #E8E8E8;
     grid-column-start: -8;
     grid-column-end: -2;
@@ -105,11 +85,10 @@
     grid-row-end: 6;
     border-radius: 1em; 
     font-size: 26px; 
-    place-self: center stretch; 
-    text-align: center; 
+    padding-left: 10px;
 }
 .ratesBox {
-    border: 3px solid #A96250; 
+    
     background-color: #E8E8E8;
     grid-column-start: -8;
     grid-column-end: -2;
@@ -117,31 +96,35 @@
     grid-row-end: 10;
     border-radius: 1em; 
     font-size: 26px; 
-    place-self: center stretch; 
-    text-align: center; 
+    padding-left: 10px;
 }
 .exchangeBox {
-    border: 3px solid #D3724D; 
-    grid-column-start: -8;
-    grid-column-end: -2;
-    grid-row-start: 11;
-    grid-row-end: 13;
+    grid-column-start: -10;
+    grid-column-end: -4;
+    grid-row-start: 18;
+    grid-row-end: 20;
     border-radius: 1em;
-    font-size: 22px;  
-    place-self: center stretch; 
-    text-align: center; 
+    font-size: 26px;  
     background-color: #E8E8E8;
+    padding-left: 10px;
 }
 
 .calculateButton {
-    border: 3px solid #D3724D; 
-    grid-column-start: -11;
-    grid-column-end: -9;
-    grid-row-start: 11;
-    grid-row-end: 13;
+    grid-column-start: -12;
+    grid-column-end: -2;
+    grid-row-start: 12;
+    grid-row-end: 14;
+    border-radius: 1em;
+    font-size: 26px;  
+    background-color: green;  
+}
+
+.dollar {
+    grid-column-start: -9;
+    grid-column-end: -4;
+    grid-row-start: 16;
+    grid-row-end: 18;
     border-radius: 1em;
     font-size: 22px;  
-    place-self: center stretch; 
-    text-align: center; 
-    background-color: #E8E8E8;  
+    color:  #E8E8E8;
 }

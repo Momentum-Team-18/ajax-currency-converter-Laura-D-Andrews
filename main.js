@@ -110,4 +110,9 @@ fetch(ratesUrl, {
     amountText.innerText = "Amount";
     containerBox.appendChild(amountText);
     amountText.classList.add("amount");
+
+    let usDollar = document.createElement('div')
+    usDollar.innerText = "1 USD is equal to"
+    containerBox.appendChild(usDollar)
+    usDollar.classList.add("dollar")
   });
