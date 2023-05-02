@@ -1,226 +1,81 @@
-/* insomnia - meant to do things we could do in JS or command line.
-is a sandbox to send requests to API. Practice here first. 
-internet of things - where you can connect to things like location sensors, 
-weather sensors, etc. 
-dropped API end-point in insomnia - the url
-add ID to url - in insomnia
-blah blah don't know what happened - see slack message
-fetch takes a url, look at structure of url and see where 
-to put a template literal (changing ids)*/
 
-// GET = show us some data from your database 
-// .then = wait until there's a response
-// return response.json() - computer reads it/parses it
-// .response - whatever you get from code immediately before it
-
-
-// fetch request: `https://openexchangerates.org/api/latest.json?app_id=APP_ID&base=BASE_CURRENCY`
-// `BASE_CURRENCY` is a placeholder for the base currency code
-// `APP_ID` is placeholder for access key - d176522a23eb485885d8f97ffb0cf101
-
-// User flow
-// user chooses target currency from dropdown
-// user inputs $ amount to convert to target currency (via text)
-// user clicks convert button
-
-// JS/API flow
-    // "chooses target currency" - reads target currency
-    // event listener - update user interface
-    // "clicks to change $ amount" - reads the new dollar amount
-    // event listener - update user interface
-    // "clicks convert button" - read the base and target currencies from dropdown
-    // makes a fetch request? 
-    // wait on response
-    // use response to update user interface to show target currency amount
-    
-
-// need to incorporate 
-    // dropdown list of currencies - use currencies.js file in this repo
-
-// event listeners
-    // convert button "click"
-    // choose currency - update user interface
-    // changes $ amount - update user interface
-
-
-/ unexpected end of input
-// method: "GET"
-// headers: {'Content-Type': "application/json"}
-
-//.then((response) => {
-    //return response.json()
-// })
-
-// .then((parsedResponse) => {
-//     let login = 
-// })
-
-// use for loops - they faster
-
-//let url = url endpoint
-
-// create element needs to be in .then statement - seperate .then statement
-// .then - dont try what's in these curly braces until what's above it has completed
-// .then((userData)) => {
-//     createusercrd(userData)
-// }
-// fetch only once
-
-// unexpected end of input
-// strategies - break points
-// what if it's specific to this API? 
-
-/* in JS there are two ways to write functions
-function equals(a, b) {
-    return equals a === b; 
-}
-function with a name above
-
-no name (anon below)
-mainContainer.addevenlistener((event, b) => {
-    return event.target
-})
-mainContainer.addEventListener(function (event, b) {
-    return  event.target
-})
-doesn't need a name because it's in an event listener
-
-call back - function also doesn;t have to have a name
-
-can use arrow notation for no name (anon) functions
-let arrjowFunction = (a, b) => {
-    return a === b; 
-}
-
-/*let mainContainer = document.querySelector("#mainContainer")
+let mainContainer = document.querySelector("#mainContainer")
 console.log(mainContainer)
+let searchForm = document.querySelector("#search-form");
+let searchField = document.querySelector("#search-field")
+console.log(searchField.value)
+let itunesURL = "https://proxy-itunes-api.glitch.me/search?term="
+let button = document.querySelector("#searchButton")
+let clearButton = document.querySelector(".clearButton")
 
-let button = document.querySelector("#button")
-console.log(button)
+searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log(searchField.value)
 
-let artist = 'shakira';
+    let itunesURL = "https://proxy-itunes-api.glitch.me/search?term="
+    let searchURL = `${itunesURL}${searchField.value}`
+    
 
-let itunesURL = `https://proxy-itunes-api.glitch.me/search?term=${artist}`
+    console.log(searchURL)
 
-fetch(itunesURL, {
-    method: "GET",
-    headers: {"Content-Type": "application/json"},
-})
-    .then(function(response) {
-        return response.json();
+    fetch(searchURL, {
+        method: "GET",
+        headers: {"Content-Type": "application/json"},
     })
-    .then(function(data) {
-        console.log(data)
-
-        for (let song of data.results) {
-
-            //console.log(data)
-            let songCard = document.createElement('div')
-            let songImage = document.createElement('img')
-            let songName = document.createElement ('h3')
-            songImage.src = song.artworkUrl100
-            //console.log(songImage)
-            songCard.appendChild(songImage)
-            songCard.classList.add("songCard")
-            songImage.classList.add("image")
-
-
-            songName.innerText = song.trackName;
-            songCard.appendChild(songName)
-            songName.classList.add("songName")
-            mainContainer.appendChild(songCard);
-        
-
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data)
+    
+            for (let song of data.results) {
+    
+                //console.log(data)
+                let songCard = document.createElement('div')
+                let songImage = document.createElement('img')
+                let songName = document.createElement ('h3')
+                songImage.src = song.artworkUrl100
+                //console.log(songImage)
+                songCard.appendChild(songImage)
+                songCard.classList.add("songCard")
+                songImage.classList.add("image")
+    
+    
+                songName.innerText = song.trackName;
+                songCard.appendChild(songName)
+                songName.classList.add("songName")
+                mainContainer.appendChild(songCard);
             
+                clearButton.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    songCard.replaceChildren()
+                })
+                
+                
+            }
+       
+       
             
-        }
-   
-   
-        
-    });
+        });
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
-// targetCurrencyBox.addEventListener('click', (event) => {
-// let exchangeEquationBox = `${exchangeEquationBox.innerText}`
-// exchangeEquationBox.innerText = exchangeEquationBox
-//     return exchangeEquationBox.innerText
-// })
 
-//   .then(function (data) {
-//     console.log(data);
-//   .then(function (parsedResponse) {
-//     console.log(parsedResponse)
-//     for (let target of parsedResponse.rates) {
-//     let targetCurrencyBox = document.createElement("div");
-//     targetCurrencyBox.innerText = target.rates
-//     containerBox.appendChild(targetCurrencyBox);
-// targetCurrencyBox.classList.add("targetCurrency");
-// console.log(targetCurrencyBox);
-// }
-//   })
-
-// header
-// let headerBox = document.createElement("div")
-// headerBox.innerText = "Currency Converter"
-// containerBox.appendChild(headerBox)
-// headerBox.classList.add("header")
-// console.log(headerBox)
-
-// from
-// let fromBox = document.createElement('div')
-// fromBox.innerText = "From"
-// containerBox.appendChild(fromBox)
-// fromBox.classList.add("from")
-// console.log(fromBox)
-
-// to
-// let toBox = document.createElement('div')
-// toBox.innerText = "To"
-// containerBox.appendChild(toBox)
-// toBox.classList.add("to")
-// console.log(toBox)
-
-// base currency
-// let baseCurrencyBox = document.createElement("div");
-// baseCurrencyBox.innerText = "USD";
-// containerBox.appendChild(baseCurrencyBox);
-// baseCurrencyBox.classList.add("baseCurrency");
-// console.log(baseCurrencyBox)
-
-// target currency
-// let targetCurrencyBox = document.createElement("div");
-// targetCurrencyBox.innerText = "EUR";
-// containerBox.appendChild(targetCurrencyBox);
-// targetCurrencyBox.classList.add("targetCurrency");
-// console.log(targetCurrencyBox)
-
-// input amount
-// let inputAmountBox = document.createElement('div')
-// inputAmountBox.innerText = "1,000"
-// containerBox.appendChild(inputAmountBox)
-// inputAmountBox.classList.add("inputAmount")
-// console.log(inputAmountBox)
-
-// output amount
-// let outputAmountBox = document.createElement('div')
-// outputAmountBox.innerText = "1,000"
-// containerBox.appendChild(outputAmountBox)
-// outputAmountBox.classList.add("outputAmount")
-// console.log(outputAmountBox)
-
-// base flag box
-// let baseFlagBox = document.createElement('div')
-// baseFlagBox.innerText = ""
-// containerBox.appendChild(baseFlagBox)
-// baseFlagBox.classList.add("baseFlag")
-// console.log(baseFlagBox)
-// needs to be img so targetFlagBox.src
-
-// target flag box
-// let targetFlagBox = document.createElement('div')
-// targetFlagBox.innerText = ""
-// containerBox.appendChild(targetFlagBox)
-// targetFlagBox.classList.add("targetFlag")
-// console.log(targetFlagBox)
-// needs to be img so targetFlagBox.src

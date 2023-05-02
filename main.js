@@ -1,5 +1,8 @@
 let containerBox = document.querySelector("#containerBox");
-
+let inputAmountBox = document.querySelector("#inputAmountBox")
+let form = document.querySelector("#form")
+let convertButton = document.querySelector('.convertButton')
+let startOverButton = document.querySelector('.startOverButton')
 let ratesUrl =
   "https://openexchangerates.org/api/latest.json?app_id=d176522a23eb485885d8f97ffb0cf101";
 
@@ -46,42 +49,33 @@ fetch(ratesUrl, {
     console.log(ratesBox);
     ratesBox.classList.add("ratesBox");
 
-    let inputAmountBox = document.createElement("textarea");
-    inputAmountBox.innerText = "0.00";
-    containerBox.appendChild(inputAmountBox);
-    inputAmountBox.classList.add("inputAmount");
-    console.log(inputAmountBox);
-
     let exchangeBox = document.createElement("div");
     exchangeBox.innerText = "0.00";
     containerBox.appendChild(exchangeBox);
     console.log(exchangeBox);
     exchangeBox.classList.add("exchangeBox");
 
-    let calculateButton = document.createElement("button");
-    calculateButton.innerText = "convert";
-    containerBox.appendChild(calculateButton);
-    calculateButton.classList.add("calculateButton");
-
     // event listeners
     codesBox.addEventListener("click", (event) => {
       console.log(event.target.innerText);
-      let country = `${countryCodes.innerText}`;
+      let country = "placeholder";
       console.log(country);
       ratesBox.innerText = country;
     });
 
-    calculateButton.addEventListener("click", (event) => {
+    convertButton.addEventListener("click", (event) => {
       console.log(event.target.innerText);
       let answer = inputAmountBox.value * `${rate}`;
       console.log(answer);
-      exchangeBox.innerText = answer;
+      exchangeBox.innerText = answer + "" + `${countryCodes.innerText}`
     });
 
-    inputAmountBox.addEventListener("click", (event) => {
-      inputAmountBox.innerText = "";
-      console.log(inputAmountBox.innerText);
-    });
+    startOverButton.addEventListener('click', (event) => {
+      event.preventDefault()
+      exchangeBox.replaceChildren()
+      ratesBox.replaceChildren()
+      form.reset()
+    })
 
     // other JS created elements
     let baseCurrency = document.createElement("div");

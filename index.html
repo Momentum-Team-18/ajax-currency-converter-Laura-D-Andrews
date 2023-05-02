@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
     <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
     <script src="main.js" defer></script>
     <script src="currencies.js"></script>
     <title>Currency Converter</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="containerBox">
-      <!-- <label for=""></label> -->
+          <form id="form">
+          <input type="number" id="inputAmountBox" name="inputAmountBox" />
+        </form> 
+        <button class="convertButton" type="submit">Convert</button>
+        <button class="startOverButton" type="reset">Start Over</button>
+      
     </div>
-</body>
+  </body>
 </html>
