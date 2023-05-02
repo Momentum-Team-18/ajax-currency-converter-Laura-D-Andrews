@@ -31,29 +31,34 @@ fetch(ratesUrl, {
       console.log(countryCodes);
     }
 
-    ///////////////////////////////////////////////////////////////////////////////
-
-    let ratesBox = document.createElement('div')
-    ratesBox.innerText = ""
-    containerBox.appendChild(ratesBox)
-    console.log(ratesBox)
-    ratesBox.classList.add("countryRates")
-    
     let countryRates = Object.values(makeAnArray);
-    for (rate of countryRates) {
-      countryRates = document.createElement("div");
-      countryRates.innerText = `${rate}`;
-      containerBox.appendChild(countryRates);
-      countryRates.classList.add("countryRates");
-      console.log(countryRates);
-    }
+    // for (rate of countryRates) {
+    //   countryRates = document.createElement("div");
+    //   countryRates.innerText = `${rate}`;
+    //   containerBox.appendChild(countryRates);
+    //   countryRates.classList.add("countryRates");
+    //   console.log(countryRates);
+    // }
 
-    codesBox.addEventListener("click", (event) => {
-      console.log(event.target.innerText);
-      let output = `${rate}`
-      console.log(output);
-      ratesBox.innerText = output;
-    });
+    let codeRateArray = Object.entries(makeAnArray);
+    console.log(Array.isArray(codeRateArray))
+
+function findRateByCode(code, rate) {
+  let rates = []
+  for (let rate of rates) {
+    if (rate.code === code)
+    rates.push(rate)
+  }
+}
+findRateByCode("ZAR", )
+console.log(findRateByCode)
+
+
+    let ratesBox = document.createElement("div");
+    ratesBox.innerText = "";
+    containerBox.appendChild(ratesBox);
+    console.log(ratesBox);
+    ratesBox.classList.add("countryRates");
 
     let inputAmountBox = document.createElement("textarea");
     containerBox.appendChild(inputAmountBox);
@@ -71,6 +76,7 @@ fetch(ratesUrl, {
     containerBox.appendChild(calculateButton);
     calculateButton.classList.add("calculateButton");
 
+    // event listeners
     calculateButton.addEventListener("click", (event) => {
       console.log(event.target.innerText);
       let answer = inputAmountBox.value * `${rate}`;
@@ -78,8 +84,7 @@ fetch(ratesUrl, {
       exchangeBox.innerText = answer;
     });
 
-    /////////////////////////////////////////////////////////////////////////////////////
-
+    // other JS created elements
     let baseCurrency = document.createElement("div");
     baseCurrency.innerText = "USD";
     containerBox.appendChild(baseCurrency);
@@ -103,5 +108,4 @@ fetch(ratesUrl, {
     containerBox.appendChild(toBox);
     toBox.classList.add("to");
     console.log(toBox);
-
   });
