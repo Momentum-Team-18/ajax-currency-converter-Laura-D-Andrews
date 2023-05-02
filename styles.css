@@ -74,18 +74,21 @@
     grid-row-end: 10;
     border-radius: 2em; 
     font-size: 26px;
+    background-color: blue;
     
 }
-.countryCodes { 
+/* .countryCodes { 
     
     background-color: #E8E8E8;
-}
+} */
+
 #inputAmountBox {
    width: 100%;
    height: 100%;
    border-radius: 2em;
    background-color: #E8E8E8;
    font-size: 26px;
+   background-color: red;
    
 }
 #form {
@@ -96,9 +99,8 @@
     border-radius: 1em; 
    
 }
-.ratesBox {
-    
-    background-color: #E8E8E8;
+.outputBox { 
+    background-color: brown;
     grid-column-start: -8;
     grid-column-end: -2;
     grid-row-start: 8;
@@ -107,7 +109,7 @@
     font-size: 26px; 
     padding-left: 10px;
 }
-.exchangeBox {
+.exchangeRateBox {
     grid-column-start: -10;
     grid-column-end: -4;
     grid-row-start: 17;
@@ -116,6 +118,7 @@
     font-size: 26px;  
     background-color: #E8E8E8;
     padding-left: 10px;
+    background-color: yellow; 
 }
 
 .convertButton {
