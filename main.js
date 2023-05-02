@@ -19,17 +19,17 @@ fetch(ratesUrl, {
     console.log(Array.isArray(parsedResponse));
     const makeAnArray = parsedResponse.rates;
 
-    let codesBox = document.createElement("select");
-    codesBox.innerText = "";
-    containerBox.appendChild(codesBox);
-    codesBox.classList.add("countryCodes");
-    console.log(codesBox);
+    let countryCodesBox = document.createElement("select");
+    countryCodesBox.innerText = "";
+    containerBox.appendChild(countryCodesBox);
+    countryCodesBox.classList.add("countryCodes");
+    console.log(countryCodesBox);
 
     let countryCodes = Object.keys(makeAnArray);
     for (code of countryCodes) {
       countryCodes = document.createElement("option");
       countryCodes.innerText = `${code}`;
-      codesBox.appendChild(countryCodes);
+      countryCodesBox.appendChild(countryCodes);
       countryCodes.classList.add("countryCodes");
       console.log(countryCodes);
     }
@@ -43,11 +43,11 @@ fetch(ratesUrl, {
     console.log(codeRateArray);
     console.log(Array.isArray(codeRateArray));
 
-    let ratesBox = document.createElement("div");
-    ratesBox.innerText = "0.00";
-    containerBox.appendChild(ratesBox);
-    console.log(ratesBox);
-    ratesBox.classList.add("ratesBox");
+    let countryRatesBox = document.createElement("div");
+    countryRatesBox.innerText = "0.00";
+    containerBox.appendChild(countryRatesBox);
+    console.log(countryRatesBox);
+    countryRatesBox.classList.add("ratesBox");
 
     let exchangeBox = document.createElement("div");
     exchangeBox.innerText = "0.00";
@@ -56,18 +56,18 @@ fetch(ratesUrl, {
     exchangeBox.classList.add("exchangeBox");
 
     // event listeners
-    codesBox.addEventListener("click", (event) => {
+    countryCodesBox.addEventListener("click", (event) => {
       console.log(event.target.innerText);
-      let country = "placeholder";
+      let country = "? amount";
       console.log(country);
-      ratesBox.innerText = country;
+      exchangeBox.innerText = country + `${countryCodes.innerText}` //how to make a space
     });
 
     convertButton.addEventListener("click", (event) => {
       console.log(event.target.innerText);
       let answer = inputAmountBox.value * `${rate}`;
       console.log(answer);
-      exchangeBox.innerText = answer + "" + `${countryCodes.innerText}`
+      countryRatesBox.innerText = answer 
     });
 
     startOverButton.addEventListener('click', (event) => {
