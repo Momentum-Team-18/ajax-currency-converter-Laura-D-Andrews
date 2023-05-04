@@ -49,7 +49,7 @@ fetch(ratesUrl, {
     convertButton.addEventListener("click", (event) => {
       let userInputAmount = inputAmountBox.value;
       let userCurrencyCode = countryCodesBox.value;
-      let userExchangeRate = makeAnArray[userCurrencyCode];
+      let userExchangeRate = makeAnArray[userCurrencyCode]; 
       let userMoneyAmount = userExchangeRate * userInputAmount;
       userOutputBox.innerText = userMoneyAmount;
     });
